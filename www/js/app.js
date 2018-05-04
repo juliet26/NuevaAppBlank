@@ -22,3 +22,18 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+.config(function($stateProvider, $urlRouterProvider){
+	$stateProvider
+	.state('lista', {
+		url:'/',
+		templateUrl:'views/lista.html',
+		controller:'listController as ctrl'
+	})
+	.state('detalle', {
+		url:'/detalle/:personaje',
+		templateUrl:'views/detalle.html',
+		controller:'detailController as ctrl'
+	});
+	
+	$urlRouterProvider.otherwise('/');
+});
